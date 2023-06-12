@@ -218,6 +218,50 @@
     .assets__info{
         @apply lg:flex items-center justify-between gap-10;
     }
+
+    /* -------------------------------------SUBJECT--------------------------------------- */
+    .subject{
+        @apply bg-[url(../dist/img/bg.png)] h-[50rem] bg-cover bg-center pt-[10rem];
+    }
+    .subject__text{
+        @apply text-center my-[2rem];
+    }
+    .subject__text h6{
+        @apply text-primary font-bold text-[1rem];
+    }
+    .subject__text p{
+        @apply text-dark font-bold text-[1.2rem];
+    }
+    .subject__card{
+        @apply bg-white shadow-2xl rounded-md w-fit mx-auto hover:-translate-y-5 transition-all duration-500;
+    }
+    .subject__card__img img{
+        @apply w-[23rem;]
+    }
+    .subject__card__text{
+        @apply p-5 border-b-2 w-fit;
+    }
+    .subject__card__text p{
+        @apply flex items-center text-[1rem] text-gray-500 font-semibold;
+    }
+    .subject__card__text h6{
+        @apply text-dark font-semibold text-[1.2rem];
+    }
+    .subject__card__text span{
+        @apply text-primary;
+    }
+    .subject__card__text p img{
+        @apply w-5 rounded-full;
+    }
+    .subject__card__text p a{
+        @apply text-[#4b5981] mx-1;
+    }
+    .subject__card__actions{
+        @apply p-5 flex items-center justify-between;
+    }
+    .subject__card__actions p{
+        @apply text-[#4b5981] font-semibold;
+    }
 }
 
 
