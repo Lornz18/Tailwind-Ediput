@@ -47,7 +47,7 @@
         @apply hidden lg:block text-white font-semibold;
     }
     .header__actions a:first-child{
-        @apply border-r-2 ;
+        @apply border-r-2;
     }
     .header__actions a{
         @apply px-5 ;
@@ -68,16 +68,16 @@
         @apply hidden lg:inline-block w-[10rem] text-[1.2rem] mx-4;
     }
     .header__container{
-        @apply flex flex-col items-center justify-between lg:flex-row lg:bg-[hsl(211.08,63.36%,25.69%)] lg:rounded-md lg:w-full lg:max-w-[90rem] lg:mx-auto;
+        @apply flex flex-col items-center justify-between lg:flex-row lg:bg-[hsl(211.08,63.36%,25.69%)] lg:p-[1rem] lg:rounded-md lg:w-full lg:max-w-[85rem] lg:mx-auto;
     }
     .header__wrapper h6{
         @apply bg-[hsl(161.68,85.64%,38.24%)] lg:hidden w-full lg:w-fit px-4 py-2 relative text-white font-bold text-[1.5rem] lg:bg-transparent; 
     }
     .header__wrapper ul{
-        @apply bg-white w-full h-0 overflow-hidden lg:overflow-visible left-0 top-[3.2rem] transition-all duration-500 lg:bg-transparent lg:h-fit lg:flex lg:items-center lg:justify-center;
+        @apply bg-white w-full h-0 overflow-hidden lg:overflow-visible transition-all left-0 top-[3.2rem] lg:bg-transparent lg:h-fit lg:flex lg:items-center lg:justify-center;
     }
     .header__wrapper ul.open{
-        @apply h-[50rem] transition-all duration-500 lg:h-fit;
+        @apply h-full transition-all lg:h-fit;
     }
     .header__wrapper ul li{
         @apply py-3 text-[#444] lg:text-white font-semibold border-t-2 relative lg:border-0;
@@ -85,13 +85,13 @@
     .header__wrapper ul li a{
         @apply pl-4 flex items-center;
     }
-    .header__wrapper ul li a::before{
+    .header__wrapper ul li a span::before{
         @apply content-[""] absolute block bg-[#444] w-4 h-1 right-[1rem] transition-all duration-500 lg:hidden;
     }
-    .header__wrapper ul li a::after{
-        @apply content-[""] absolute block bg-[#444] w-1 h-4 right-[1.3rem] transition-all duration-500 lg:hidden;
+    .header__wrapper ul li a span::after{
+        @apply content-[""] absolute block bg-[#444] w-1 h-4 right-[1.4rem] -translate-y-[.38rem] transition-all duration-500 lg:hidden;
     }
-    .header__wrapper ul li a::after.open{
+    .header__wrapper ul li a.open span::after{
         @apply hidden transition-all duration-500;
     }
     .header__wrapper ul li a i{
@@ -104,22 +104,43 @@
         @apply lg:overflow-visible lg:max-h-[20rem] lg:opacity-100 lg:translate-y-0 transition-all;
     }
     .dropdown.open{
-        @apply max-h-[20rem] transition-all duration-500;
+        @apply max-h-[50rem] transition-all duration-500;
     }
     .dropdown ul{
-        @apply flex flex-col top-0 mt-3 h-full lg:h-[10rem] lg:bg-[hsl(161.68,85.64%,38.24%)] transition-all;
+        @apply flex flex-col top-0 mt-3 lg:m-0 h-full lg:h-fit lg:bg-[hsl(161.68,85.64%,38.24%)] transition-all;
     }
     .dropdown ul li{
-        @apply font-normal pl-5 lg:w-[10rem];
+        @apply font-normal lg:w-[15rem] lg:hover:bg-white lg:hover:text-primary transition-all relative duration-500;
     }
     .dropdown ul li a{
-        @apply hover:text-[hsl(161.68,85.64%,38.24%)] transition-all;
+        @apply hover:text-[hsl(161.68,85.64%,38.24%)] transition-all ml-[2rem] lg:m-0;
     }
     .dropdown ul li a::before{
         @apply hidden;
     }
     .dropdown ul li a::after{
         @apply hidden;
+    }
+    .dropdown ul li:hover .dropdown.children{
+        @apply lg:block;
+    }
+    .dropdown.children{
+        @apply lg:hidden lg:absolute lg:left-[15rem] lg:w-fit lg:top-0 z-10;
+    }
+    .dropdown.children ul li{
+        @apply relative;
+    }
+    .dropdown.children ul li a{
+        @apply px-[2rem];
+    }
+    .dropdown.children-portfolio{
+        @apply lg:hidden lg:absolute lg:left-[-15rem] lg:w-fit lg:top-0 z-50;
+    }
+    .dropdown.children ul li:hover .dropdown.children-portfolio{
+        @apply lg:block
+    }
+    .dropdown.children-portfolio ul li a{
+        @apply px-[4rem] w-fit;
     }
     .toggle__menu{
         @apply absolute right-5 top-[35%] lg:hidden;
@@ -173,8 +194,11 @@
     .assets{
         @apply py-[2rem];
     }
+    .assets__wrapper{
+        @apply lg:translate-y-[-10rem];
+    }
     .assets__item{
-        @apply z-50 border-[.1rem] border-primary w-fit p-[2rem] rounded-xl text-center mx-auto hover:shadow-2xl transition-all duration-500;
+        @apply z-50 border-[.1rem] bg-white border-primary w-fit p-[2rem] rounded-xl text-center mx-auto hover:shadow-2xl transition-all duration-500;
     }
     .assets__item img{
         @apply mx-auto;
@@ -221,25 +245,46 @@
 
     /* -------------------------------------SUBJECT--------------------------------------- */
     .subject{
-        @apply bg-[url(../dist/img/bg.png)] h-[50rem] bg-cover bg-center pt-[10rem];
+        @apply bg-[url(../dist/img/bg.png)] bg-cover bg-center pt-[5rem] lg:bg-top;
     }
     .subject__text{
         @apply text-center my-[2rem];
     }
     .subject__text h6{
-        @apply text-primary font-bold text-[1rem];
+        @apply text-primary font-bold text-[1.5rem];
     }
     .subject__text p{
         @apply text-dark font-bold text-[1.2rem];
     }
+    .subject__content{
+        @apply lg:grid lg:grid-cols-3;
+    }
     .subject__card{
-        @apply bg-white shadow-2xl rounded-md w-fit mx-auto hover:-translate-y-5 transition-all duration-500;
+        @apply relative w-fit mx-auto my-[2rem];
+    }
+    .subject__card__content{
+        @apply bg-white shadow-2xl rounded-md w-[25rem] mx-auto transition-all duration-500;
+    }
+    .subject__card:hover .subject__card__content{
+        @apply -translate-y-5 transition-all duration-500;
     }
     .subject__card__img img{
-        @apply w-[23rem;]
+        @apply w-fit;
     }
+    .subject__category{
+        @apply flex items-center justify-between w-full;
+    }
+    .subject__category ul li a{
+        @apply absolute top-5 bg-primary text-white rounded-md p-1 left-5 overflow-hidden;
+    }
+    /* .subject__category span a::before{
+        @apply content-["\f02e"] block absolute w-2 h-2 text-[2rem];
+    }
+    .subject__category span{
+        @apply block bg-white w-5 h-5;
+    } */
     .subject__card__text{
-        @apply p-5 border-b-2 w-fit;
+        @apply p-5 border-b-2 w-fit min-h-[10rem];
     }
     .subject__card__text p{
         @apply flex items-center text-[1rem] text-gray-500 font-semibold;
@@ -261,6 +306,136 @@
     }
     .subject__card__actions p{
         @apply text-[#4b5981] font-semibold;
+    }
+
+    /* --------------------------------INSTRUCTORS--------------------------------- */
+    .instructors__content{
+        @apply relative lg:w-[90rem] mx-auto my-[5rem];
+    }
+    .benefit__card__container{
+        @apply lg:grid lg:grid-cols-4;
+    }
+    .instructors__text.center{
+        @apply text-center;
+    }
+    .instructors__text h1{
+        @apply text-primary font-bold text-[1.2rem];
+    }
+    .instructors__text h2{
+        @apply text-dark font-bold text-[1.5rem];
+    }
+    .instructors__card__content{
+        @apply border-2 border-primary w-[20rem] rounded-lg text-center mx-auto py-[2rem] my-[1rem] hover:border-transparent hover:shadow-2xl transition-all duration-500;
+    }
+    .instructors__card__content:hover .instructors__card__text{
+        @apply w-full border-primary transition-all duration-500;
+    }
+    .instructors__card__content img{
+        @apply mx-auto;
+    }
+    .instructors__card__text{
+        @apply border-b-[.1rem] w-[10rem] mx-auto mb-5 transition-all duration-500;
+    }
+    .instructors__card__text h4{
+        @apply text-dark text-[1.5rem] font-bold;
+    }
+    .instructors__card__text p{
+        @apply text-gray-500 font-semibold;
+    }
+    .instructors__card__icon{
+        @apply px-[5rem]
+    }
+    .instructors__card__icon ul{
+        @apply flex items-center justify-between gap-2;
+    }
+    .instructors__card__icon ul li{
+        @apply bg-[#dbf4ec] rounded-md text-primary hover:bg-primary hover:text-white transition-all duration-500;
+    }
+    .instructors__card__icon ul li a{
+        @apply p-2;
+    }
+    .news__card__content{
+        @apply shadow-md my-[1rem] hover:shadow-2xl transition-all duration-500 w-[25rem] mx-auto;
+    }
+    .news__card__content:hover .news__card__img span{
+        @apply w-full h-full top-0 left-0 transition-all duration-500;
+    }
+    .news__card__content:hover .news__card__img a{
+        @apply w-[3.7rem] h-[2rem] bg-primary transition-all duration-500;
+    }
+    .news__card__img{
+        @apply overflow-hidden relative;
+    }
+    .news__card__img img{
+        @apply transition-all duration-500;
+    }
+    .news__card__img a{
+        @apply overflow-hidden bg-transparent h-0 w-0 text-white rounded-md p-1 absolute top-5 left-5 z-10 transition-all duration-500; 
+    }
+    .news__card__img span{
+        @apply absolute bg-dark w-0 h-0 top-[50%] left-[50%] z-0 opacity-50 transition-all duration-500;
+    }
+    .news__card__content:hover .news__card__img img{
+        @apply scale-110 transition-all duration-500;
+    }
+    .news__card__text{
+        @apply py-5 px-2;
+    }
+    .news__card__text p{
+        @apply text-[1.3rem] text-dark font-bold h-[4rem] hover:text-primary transition-all duration-500;
+    }
+    .news__card__icon ul{
+        @apply flex items-center gap-5; 
+    }
+    .news__card__icon ul li{
+        @apply text-[1.1rem] font-semibold text-primary;
+    }
+    .news__card__icon ul li i{
+        @apply mr-2; 
+    }
+    .news__card__actions a{
+        @apply inline-block text-[1.2rem] border-2 border-gray-500 rounded-md p-2 my-5 mx-2 hover:bg-primary hover:text-white hover:border-transparent transition-all duration-500;
+    }
+    .benefits__card__text h4{
+        @apply font-bold text-[1.5rem] text-dark hover:text-primary transition-all duration-500;
+    }
+
+    /* ---------------------------TESTIMONIAL----------------------------*/
+    .testimonial{
+        @apply bg-[#0EB58208];
+    }
+    .testimonials__wrapper{
+        @apply p-[2rem];
+    }
+    .testimonials__content{
+        @apply lg:flex lg:items-center lg:justify-between;
+    }
+    .testimonials__text{
+        @apply lg:w-[45rem]
+    }
+    .testimonials__text h4{
+        @apply text-primary font-bold text-[1.5rem] text-center;
+    }
+    .testimonials__text p{
+        @apply text-dark font-bold text-[1.5rem] text-center;
+    }
+    .testimonials__slider span{
+        @apply text-primary text-[2rem];
+    }
+    .testimonials__slider p{
+        @apply text-gray-500 text-[1.2rem] text-left;
+    }
+    .testimonials__slider img{
+        @apply w-[4rem];
+    }
+    .testimonials__slider__profile{
+        @apply flex items-center gap-2 my-[1rem];
+    }
+    .testimonials__slider__profile h6{
+        @apply text-dark font-bold;
+    }
+    .testimonials__slider__profile p{
+        @apply text-primary font-bold text-left;
     }
 }
 
@@ -290,4 +465,16 @@
 }
 .assets .tns-outer{
     @apply lg:mx-[10rem] relative;
+}
+.instructors .tns-controls{
+    @apply lg:flex items-center gap-2 absolute w-fit right-0 top-5 px-[2rem];
+}
+.instructors .tns-controls button{
+    @apply bg-primary text-white px-3 py-2 rounded-full;
+}
+.testimonial .tns-controls{
+    @apply lg:flex items-center gap-4;
+}
+.testimonial .tns-controls button{
+    @apply bg-primary text-white px-3 py-2 rounded-full;
 }
