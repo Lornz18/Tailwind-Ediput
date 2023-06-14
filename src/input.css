@@ -178,7 +178,7 @@
         @apply hidden lg:block w-full lg:w-[40rem];
     }
     .banner__text{
-        @apply text-center w-full relative z-0 lg:text-left lg:pt-[1rem];
+        @apply text-center w-full relative lg:text-left lg:pt-[1rem];
     }
     .banner__text h1{
         @apply absolute left-0 top-0 z-[-1] text-gray-700 font-bold text-[4rem] leading-none;
@@ -296,7 +296,7 @@
         @apply flex items-center text-[1rem] text-gray-500 font-semibold;
     }
     .subject__card__text h6{
-        @apply text-dark font-semibold text-[1.2rem];
+        @apply text-dark font-semibold text-[1.2rem] hover:text-primary transition-all duration-500;
     }
     .subject__card__text span{
         @apply text-primary;
@@ -575,7 +575,7 @@
         @apply py-[2rem] lg:flex lg:items-center lg:justify-between;
     }
     .footer__copyright p{
-        @apply text-white font-normal text-center;
+        @apply text-white font-normal text-center font-Raleway;
     }
     .footer__copyright__actions{
         @apply flex items-center justify-between w-[12rem] mx-auto mt-[1rem] lg:m-0;
