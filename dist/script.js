@@ -12,3 +12,13 @@ nav.forEach((baba) => {
     baba.classList.toggle("open");
   });
 });
+
+const gutter = document.querySelector(".header__wrapper.nav");
+window.addEventListener("scroll", () => {
+  console.log(window.pageYOffset);
+  if (window.pageYOffset >= 300) {
+    gutter.classList.add("top");
+  } else {
+    gutter.classList.remove("top");
+  }
+});
