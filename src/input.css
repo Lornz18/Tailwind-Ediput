@@ -10,13 +10,13 @@
 
 @layer utilities{
     .btn{
-        @apply p-2 rounded-xl;
+        @apply p-3 rounded-md;
     }
     .btn.green{
         @apply bg-[hsl(161.68,85.64%,38.24%)] text-white font-semibold hover:bg-[#444] transition-all duration-500;
     }
     .btn.green-outline{
-        @apply border-2 font-semibold border-[hsl(161.68,85.64%,38.24%)] text-[hsl(161.68,85.64%,38.24%)] hover:bg-[hsl(161.68,85.64%,38.24%)] hover:text-white transition-all duration-500;
+        @apply border-[.1rem] font-semibold border-[hsl(161.68,85.64%,38.24%)] text-[hsl(161.68,85.64%,38.24%)] hover:bg-[hsl(161.68,85.64%,38.24%)] hover:text-white transition-all duration-500;
     }
 }
 
@@ -184,13 +184,13 @@
         @apply absolute left-0 top-0 z-[-1] text-gray-700 font-bold text-[4rem] leading-none;
     }
     .banner__text h4{
-        @apply text-white text-[2rem] w-[24rem] lg:w-fit mx-auto lg:m-0 font-bold;
+        @apply text-white text-[2rem] lg:text-[4rem] w-[24rem] lg:w-[46rem] mx-auto lg:m-0 font-bold;
     }
     .banner__text p{
-        @apply text-white text-[1.5rem] w-[25rem] lg:w-fit mx-auto lg:m-0 mb-5;
+        @apply text-white text-[1.5rem] w-[25rem] lg:w-[40rem] mx-auto lg:m-0 mb-5;
     }
     .banner__actions{
-        @apply text-[1.2rem] my-5 w-full lg:w-fit;
+        @apply text-[1.2rem] my-[2rem] w-full lg:w-fit;
     }
 
     /* -----------------------------ASSETS---------------------------- */

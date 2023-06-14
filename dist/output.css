@@ -1194,8 +1194,8 @@ video {
 @media (min-width: 1024px) {
   .banner__text h4 {
     margin: 0px;
-    width: -moz-fit-content;
-    width: fit-content;
+    width: 46rem;
+    font-size: 4rem;
   }
 }
 
@@ -1212,14 +1212,13 @@ video {
 @media (min-width: 1024px) {
   .banner__text p {
     margin: 0px;
-    width: -moz-fit-content;
-    width: fit-content;
+    width: 40rem;
   }
 }
 
 .banner__actions {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   width: 100%;
   font-size: 1.2rem;
 }
@@ -2542,8 +2541,8 @@ video {
 }
 
 .btn {
-  border-radius: 0.75rem;
-  padding: 0.5rem;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
 }
 
 .btn.green {
@@ -2563,7 +2562,7 @@ video {
 }
 
 .btn.green-outline {
-  border-width: 2px;
+  border-width: .1rem;
   --tw-border-opacity: 1;
   border-color: hsl(161.68 85.64% 38.24% / var(--tw-border-opacity));
   font-weight: 600;
