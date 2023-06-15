@@ -2655,6 +2655,22 @@ video {
   color: hsl(161.68 85.64% 38.24% / var(--tw-text-opacity));
 }
 
+.text-fill-transparent {
+  -webkit-text-fill-color: transparent;
+}
+
+.text-stroke-black {
+  -webkit-text-stroke-color: #000;
+}
+
+.text-stroke-gray-400 {
+  -webkit-text-stroke-color: #9ca3af;
+}
+
+.text-stroke-2 {
+  -webkit-text-stroke-width: 2px;
+}
+
 .btn {
   border-radius: 0.375rem;
   padding: 0.75rem;

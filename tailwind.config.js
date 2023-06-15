@@ -2,6 +2,23 @@
 module.exports = {
   content: ["./dist/**/*.{html,js}"],
   theme: {
+    textFillColor: theme => theme('borderColor'),
+    textStrokeColor: theme => theme('borderColor'),
+    textStrokeWidth: theme => theme('borderWidth'),
+    paintOrder: {
+      'fsm': { paintOrder: 'fill stroke markers' },
+      'fms': { paintOrder: 'fill markers stroke' },
+      'sfm': { paintOrder: 'stroke fill markers' },
+      'smf': { paintOrder: 'stroke markers fill' },
+      'mfs': { paintOrder: 'markers fill stroke' },
+      'msf': { paintOrder: 'markers stroke fill' },
+    },
+    variants: { // all the following default to ['responsive']
+      textFillColor: ['responsive'],
+      textStrokeColor: ['responsive'],
+      textStrokeWidth: ['responsive'],
+      paintOrder: ['responsive'],
+    },
     extend: {
       colors:{
         primary: "hsl(161.68,85.64%,38.24%)",
@@ -34,6 +51,8 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-text-fill-stroke')(),
+  ],
 }
 
