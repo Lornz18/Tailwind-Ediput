@@ -246,7 +246,7 @@
         @apply content-[""] absolute right-0 bottom-0 translate-y-2 border-primary border-[6px] rounded-[50%] bg-[#1c1b1b] animate-sliding2;
     }
     .assets__info{
-        @apply lg:flex items-center justify-between gap-[5rem] w-[80rem] mx-auto mt-[5rem];
+        @apply lg:flex items-center justify-between gap-[5rem] lg:w-[80rem] mx-auto mt-[5rem];
     }
 
     /* -------------------------------------SUBJECT--------------------------------------- */
