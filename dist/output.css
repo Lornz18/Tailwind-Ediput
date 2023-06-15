@@ -721,10 +721,11 @@ video {
 }
 
 .header__quate {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
   display: none;
-  width: 10rem;
+  width: -moz-fit-content;
+  width: fit-content;
   font-size: 1.2rem;
 }
 
@@ -732,6 +733,10 @@ video {
   .header__quate {
     display: inline-block;
   }
+}
+
+.header__quate a {
+  width: 15rem;
 }
 
 .header__container {
@@ -1129,7 +1134,7 @@ video {
 
 @media (min-width: 1024px) {
   .banner {
-    height: 55rem;
+    height: 65rem;
   }
 }
 
@@ -1174,11 +1179,19 @@ video {
   left: 0px;
   top: 0px;
   z-index: -1;
+  stroke: inherit;
   font-size: 4rem;
   font-weight: 700;
   line-height: 1;
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
+  opacity: 0.8;
+}
+
+@media (min-width: 1024px) {
+  .banner__text h1 {
+    font-size: 9rem;
+  }
 }
 
 .banner__text h4 {
@@ -1196,6 +1209,7 @@ video {
     margin: 0px;
     width: 46rem;
     font-size: 4rem;
+    line-height: 6rem;
   }
 }
 
@@ -2629,8 +2643,8 @@ video {
 .assets .tns-controls {
   position: absolute;
   right: 0px;
-  top: 45%;
-  z-index: 40;
+  top: 40%;
+  z-index: 10;
   display: none;
   width: 100%;
   align-items: center;

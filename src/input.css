@@ -68,7 +68,10 @@
         @apply hidden lg:block lg:py-2;
     }
     .header__quate{
-        @apply hidden lg:inline-block w-[10rem] text-[1.2rem] mx-4;
+        @apply hidden lg:inline-block w-fit text-[1.2rem] mx-auto;
+    }
+    .header__quate a{
+        @apply w-[15rem];
     }
     .header__container{
         @apply flex flex-col items-center justify-between lg:flex-row lg:bg-[hsl(211.08,63.36%,25.69%)] lg:p-[1rem] lg:rounded-md lg:w-full lg:max-w-[85rem] lg:mx-auto;
@@ -166,7 +169,7 @@
 
     /* ---------------------------BANNER------------------------ */
     .banner{
-        @apply bg-[url(../dist/img/slider-bg2.jpg)] bg-cover h-[50rem] bg-no-repeat relative lg:h-[55rem];
+        @apply bg-[url(../dist/img/slider-bg2.jpg)] bg-cover h-[50rem] bg-no-repeat relative lg:h-[65rem];
     }
     .banner__content{
         @apply flex items-center justify-between;
@@ -181,10 +184,10 @@
         @apply text-center w-full relative lg:text-left lg:pt-[1rem];
     }
     .banner__text h1{
-        @apply absolute left-0 top-0 z-[-1] text-gray-700 font-bold text-[4rem] leading-none;
+        @apply absolute left-0 top-0 z-[-1] text-gray-700 opacity-80 stroke-inherit font-bold text-[4rem] leading-none lg:text-[9rem];
     }
     .banner__text h4{
-        @apply text-white text-[2rem] lg:text-[4rem] w-[24rem] lg:w-[46rem] mx-auto lg:m-0 font-bold;
+        @apply text-white text-[2rem] lg:text-[4rem] w-[24rem] lg:w-[46rem] mx-auto lg:m-0 font-bold lg:leading-[6rem];
     }
     .banner__text p{
         @apply text-white text-[1.5rem] w-[25rem] lg:w-[40rem] mx-auto lg:m-0 mb-5;
@@ -601,7 +604,7 @@
 }
 
 .assets .tns-controls{
-    @apply z-40 hidden lg:flex items-center justify-between absolute w-full right-0 top-[45%] opacity-0 transition-all;
+    @apply z-10 hidden lg:flex items-center justify-between absolute w-full right-0 top-[40%] opacity-0 transition-all;
 }
 .assets:hover .tns-controls{
     @apply opacity-100 transition-all;
