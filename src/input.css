@@ -110,10 +110,10 @@
         @apply max-h-[50rem] transition-all duration-500;
     }
     .dropdown ul{
-        @apply flex flex-col top-0 mt-3 lg:m-0 h-full lg:h-fit lg:bg-[hsl(161.68,85.64%,38.24%)] transition-all duration-500;
+        @apply flex flex-col top-0 mt-3 lg:m-0 h-full lg:h-fit lg:bg-[hsl(161.68,85.64%,38.24%)] transition-all duration-500 lg:duration-300;
     }
     .dropdown ul li{
-        @apply font-normal lg:w-[15rem] lg:hover:bg-white lg:hover:text-primary transition-all relative duration-500;
+        @apply font-normal lg:w-[15rem] lg:hover:bg-white lg:hover:text-primary transition-all relative duration-500 lg:duration-300;
     }
     .dropdown ul li a{
         @apply hover:text-[hsl(161.68,85.64%,38.24%)] transition-all ml-[2rem] lg:m-0;
@@ -125,13 +125,13 @@
         @apply hidden;
     }
     .dropdown ul li:hover .dropdown.children ul{
-        @apply lg:opacity-100 lg:top-[-2rem] transition-all duration-500;
+        @apply lg:opacity-100 lg:visible lg:top-[-2rem] transition-all duration-500 lg:duration-300;
     }
     .dropdown ul li:hover .dropdown.children-portfolio ul{
-        @apply lg:opacity-0 transition-all duration-500;
+        @apply lg:opacity-0 lg:invisible;
     }
     .dropdown.children ul{
-        @apply lg:opacity-0 lg:m-0 lg:absolute lg:left-[15rem] lg:w-fit lg:top-[2rem] transition-all duration-500;
+        @apply lg:opacity-0 lg:invisible lg:m-0 lg:absolute lg:left-[15rem] lg:max-h-fit lg:w-fit lg:top-[2rem] transition-all duration-500 lg:duration-300;
     }
     .dropdown.children ul li{
         @apply relative transition-all;
@@ -140,13 +140,13 @@
         @apply px-[2rem] transition-all;
     }
     .dropdown.children-portfolio ul{
-        @apply lg:opacity-0 lg:invisible lg:absolute lg:py-[1rem] lg:left-[-15rem] lg:max-h-fit lg:w-fit lg:top-0 lg:translate-y-5 transition-all duration-500;
+        @apply lg:shadow-lg lg:opacity-0 lg:overflow-hidden lg:invisible lg:absolute lg:z-[-1] lg:py-[1rem] lg:left-[-15rem] lg:max-h-fit lg:w-fit lg:top-0 lg:translate-y-5 transition-all duration-500 lg:duration-300;
     }
     .dropdown.children ul li:hover .dropdown.children-portfolio ul{
-        @apply lg:opacity-100 lg:visible lg:-translate-y-2 transition-all duration-500;
+        @apply lg:opacity-100 lg:visible lg:-translate-y-2 transition-all duration-500 lg:duration-300;
     }
     .dropdown.children-portfolio ul li a{
-        @apply px-[4rem] lg:px-[1rem] w-[20rem] transition-all;
+        @apply px-[4rem] lg:px-[1rem] lg:w-[15rem] transition-all;
     }
     .toggle__menu{
         @apply absolute right-5 top-[35%] lg:hidden;
@@ -187,7 +187,7 @@
         @apply text-center w-full relative lg:text-left lg:pt-[1rem];
     }
     .banner__text h1{
-        @apply absolute left-0 top-0 z-[-1] text-gray-700 opacity-80 stroke-inherit font-bold text-[4rem] leading-none lg:text-[9rem];
+        @apply absolute left-0 top-0 z-[-1] opacity-80 text-stroke-gray-400 text-stroke-2 text-fill-transparent font-bold text-[4rem] leading-none lg:text-[9rem] transition-all duration-500;
     }
     .banner__text h4{
         @apply text-white text-[2rem] lg:text-[4rem] w-[24rem] lg:w-[46rem] mx-auto lg:m-0 font-bold lg:leading-[6rem];
@@ -228,10 +228,10 @@
         @apply text-dark font-bold text-[1.3rem] lg:text-[2.5rem];
     }
     .assets__text h3{
-        @apply my-[2rem] border-l-4 border-primary pl-5 text-[1.2rem] lg:w-[30rem] text-gray-600 font-semibold;
+        @apply my-[2rem] border-l-4 border-primary pl-5 text-[1.2rem] text-gray-600 font-semibold;
     }
     .assets__text p{
-        @apply text-gray-600 lg:w-[30rem];
+        @apply text-gray-600;
     }
     .assets__success{
         @apply my-[2rem];
@@ -334,7 +334,7 @@
         @apply text-dark font-bold text-[1.5rem];
     }
     .instructors__card__content{
-        @apply border-2 border-primary w-[18rem] rounded-lg text-center mx-auto px-[1rem] py-[2rem] my-[1rem] hover:border-transparent hover:shadow-2xl transition-all duration-500;
+        @apply border-2 border-primary w-[18rem] rounded-lg text-center mx-auto py-[2rem] my-[1rem] hover:border-transparent hover:shadow-2xl transition-all duration-500;
     }
     .instructors__card__content:hover .instructors__card__text{
         @apply w-full border-primary transition-all duration-500;
@@ -343,7 +343,7 @@
         @apply mx-auto;
     }
     .instructors__card__text{
-        @apply border-b-[.1rem] w-[12rem] mx-auto mb-5 transition-all duration-500;
+        @apply border-b-[.1rem] w-[11rem] mx-auto mb-5 transition-all duration-500;
     }
     .instructors__card__text h4{
         @apply text-dark text-[1.5rem] font-bold;
@@ -459,7 +459,7 @@
         @apply text-dark;
     }
     .testimonials__card{
-        @apply border-[.1rem] border-primary p-[2rem] my-[1rem] shadow-md hover:shadow-xl hover:border-white lg:flex lg:items-center lg:gap-4 lg:p-[1rem] lg:w-[33rem] lg:h-[15rem] transition-all duration-500;
+        @apply border-[.1rem] border-primary p-[2rem] my-[1rem] shadow-md hover:shadow-xl hover:border-white lg:flex lg:items-start lg:gap-4 lg:p-[1rem] lg:w-[33rem] lg:h-[15rem] transition-all duration-500;
     }
     .testimonials__card__text{
         @apply my-[1rem] relative;
@@ -468,13 +468,13 @@
         @apply text-primary font-semibold;
     } 
     .testimonials__card__text h2{
-        @apply text-dark font-bold text-[1.5rem];
+        @apply text-dark font-bold text-[1.5rem] lg:text-[1.7rem];
     }
     .testimonials__card__actions{
-        @apply h-[5rem] relative;
+        @apply h-[5rem] relative mt-[1rem];
     }
     .testimonials__card__actions span{
-        @apply inline-block mt-[1rem] z-20 bg-primary w-[2rem] h-[2rem] rounded-full relative transition-all duration-500;
+        @apply inline-block z-20 bg-primary w-[2rem] h-[2rem] mx-auto rounded-full relative transition-all duration-500;
     } 
     .testimonials__card__actions span::before{
         @apply content-[""] block absolute w-[.8rem] lg:w-[.9rem] h-1 bg-white left-[30%] top-[45%];
@@ -483,7 +483,7 @@
         @apply content-[""] block absolute w-1 h-[.8rem] bg-white left-[45%] top-[30%];
     } 
     .testimonials__card__actions a{
-        @apply absolute inline-block w-[7rem] text-center lg:w-[9rem] h-[2rem] lg:h-[2.5rem] lg:text-[1.5rem] opacity-0 left-0 top-0 text-white font-bold p-1 rounded-md transition-all duration-500;
+        @apply relative inline-block w-[7rem] text-center lg:w-[9rem] h-[2rem] lg:h-[2.5rem] lg:text-[1.5rem] opacity-0 text-white font-bold p-1 rounded-md transition-all duration-500;
     } 
     .testimonials__card__actions a::after{
         @apply content-[""] block absolute top-0 left-0 rounded-md bg-primary w-0 h-full z-[-1] transition-all duration-500;
@@ -510,19 +510,19 @@
         @apply lg:flex lg:items-center lg:justify-between;
     }
     .testimonials__content:last-child{
-        @apply absolute -bottom-[20rem] left-0 w-full lg:-bottom-[13rem];
+        @apply absolute -bottom-[20rem] left-0 w-full lg:-bottom-[18rem];
     }
     .testimonials__newsletter{
-        @apply bg-primary px-[1rem] py-[2rem] rounded-md lg:p-[2.5rem] mx-auto lg:w-[80rem]  lg:flex lg:items-center lg:justify-between; 
+        @apply bg-primary px-[1rem] py-[2rem] lg:py-[3rem] lg:rounded-xl rounded-md lg:p-[2.5rem] mx-auto lg:w-[80rem]  lg:flex lg:items-center lg:justify-between; 
     }
     .testimonials__newsletter__text h4{
-        @apply text-white font-bold text-[1.5rem]; 
+        @apply text-white font-bold text-[1.5rem] lg:text-[3rem]; 
     }
     .testimonials__newsletter__text p{
         @apply text-white font-semibold text-[1.2rem]; 
     }
     .testimonials__newsletter__actions{
-        @apply mt-[2rem] lg:flex lg:h-[4rem]; 
+        @apply mt-[2rem] lg:m-0 lg:flex lg:h-[4rem]; 
     }
     .testimonials__newsletter__actions input{
         @apply p-4 w-full rounded-md lg:rounded-r-none lg:w-[30rem]; 
@@ -536,7 +536,7 @@
 
     /* -------------------------FOOTER---------------------- */
     .footer{
-        @apply bg-[#18406b] pt-[10rem] lg:pt-[5rem];
+        @apply bg-[#18406b] pt-[10rem];
     }
     .footer__brand{
         @apply text-center lg:text-left;
@@ -575,7 +575,7 @@
         @apply text-white text-[1.2rem] font-normal;
     }
     .footer__links{
-        @apply border-b-[.1rem] border-white pb-[5rem] lg:grid lg:grid-cols-4 lg:gap-[10rem];
+        @apply border-b-[.1rem] border-white pb-[5rem] lg:grid lg:grid-cols-4 lg:gap-[4rem];
     }
     .footer__copyright{
         @apply py-[2rem] lg:flex lg:items-center lg:justify-between;
@@ -609,7 +609,7 @@
     @apply lg:mx-[10rem] relative;
 }
 .assets__success .tns-outer{
-    @apply lg:w-[40rem] lg:mx-0;
+    @apply lg:w-full lg:mx-0;
 }
 .assets .tns-controls{
     @apply z-10 hidden lg:flex items-center justify-between absolute w-full right-0 top-[40%] opacity-0 transition-all;
