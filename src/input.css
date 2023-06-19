@@ -10,7 +10,7 @@
 
 @layer utilities{
     .btn{
-        @apply p-3 rounded-md;
+        @apply p-3 rounded-md inline-block;
     }
     .btn.green{
         @apply bg-[hsl(161.68,85.64%,38.24%)] text-white font-semibold hover:bg-[#444] transition-all duration-500;
@@ -187,10 +187,10 @@
         @apply text-center w-full relative lg:text-left lg:pt-[1rem];
     }
     .banner__text h1{
-        @apply absolute left-0 top-0 z-[-1] opacity-80 text-stroke-gray-400 text-stroke-2 text-fill-transparent font-bold text-[4rem] leading-none lg:text-[9rem] transition-all duration-500;
+        @apply absolute left-0 top-0 z-[-1] opacity-20 text-stroke-gray-400 text-stroke-4 text-fill-transparent font-bold text-[4rem] leading-none lg:text-[9rem] transition-all duration-500;
     }
     .banner__text h4{
-        @apply text-white text-[2rem] lg:text-[4rem] w-[24rem] lg:w-[46rem] mx-auto lg:m-0 font-bold lg:leading-[6rem];
+        @apply text-white text-[2rem] lg:text-[4rem] w-[24rem] lg:w-[46rem] mx-auto lg:m-0 font-bold;
     }
     .banner__text p{
         @apply text-white text-[1.5rem] w-[25rem] lg:w-[40rem] mx-auto lg:m-0 mb-5;
@@ -251,7 +251,7 @@
 
     /* -------------------------------------SUBJECT--------------------------------------- */
     .subject{
-        @apply bg-[url(../dist/img/bg.png)] bg-cover bg-center pt-[5rem] lg:bg-top;
+        @apply bg-[url(../dist/img/bg.png)] bg-cover bg-center py-[5rem] lg:bg-top;
     }
     .subject__text{
         @apply text-center my-[2rem];
@@ -269,7 +269,7 @@
         @apply relative w-fit mx-auto my-[2rem];
     }
     .subject__card__content{
-        @apply bg-white shadow-2xl rounded-md w-[25rem] mx-auto transition-all duration-500;
+        @apply bg-white shadow-2xl rounded-md lg:w-[25rem] mx-auto transition-all duration-500;
     }
     .subject__card:hover .subject__card__content{
         @apply -translate-y-5 transition-all duration-500;
@@ -299,13 +299,13 @@
         @apply flex items-center text-[1rem] text-gray-500 font-semibold;
     }
     .subject__card__text h6{
-        @apply text-dark font-semibold text-[1.2rem] hover:text-primary transition-all duration-500;
+        @apply text-dark h-[5rem] font-semibold text-[1.2rem] hover:text-primary transition-all duration-500;
     }
     .subject__card__text span{
         @apply text-primary;
     }
     .subject__card__text p img{
-        @apply w-5 rounded-full;
+        @apply w-5 mr-2 rounded-full;
     }
     .subject__card__text p a{
         @apply text-[#4b5981] mx-1;
@@ -334,7 +334,7 @@
         @apply text-dark font-bold text-[1.5rem];
     }
     .instructors__card__content{
-        @apply border-2 border-primary w-[18rem] rounded-lg text-center mx-auto py-[2rem] my-[1rem] hover:border-transparent hover:shadow-2xl transition-all duration-500;
+        @apply border-2 border-[#C6F9E9] w-[18rem] rounded-lg text-center mx-auto py-[2rem] my-[1rem] hover:border-transparent hover:shadow-2xl transition-all duration-500;
     }
     .instructors__card__content:hover .instructors__card__text{
         @apply w-full border-primary transition-all duration-500;
@@ -352,8 +352,8 @@
         @apply text-gray-500 font-semibold;
     }
     .instructors__card__icon{
-        @apply px-[5rem]
-    }
+        @apply px-[5rem];
+    } 
     .instructors__card__icon ul{
         @apply flex items-center justify-between gap-2;
     }
@@ -361,10 +361,10 @@
         @apply bg-[#dbf4ec] rounded-md text-primary hover:bg-primary hover:text-white transition-all duration-500;
     }
     .instructors__card__icon ul li a{
-        @apply p-2;
+        @apply py-1 px-3 inline-block;
     }
     .news__card__content{
-        @apply shadow-md my-[1rem] hover:shadow-2xl transition-all duration-500 w-[25rem] mx-auto;
+        @apply shadow-md my-[1rem] hover:shadow-2xl transition-all duration-500 lg:w-[25rem] mx-auto;
     }
     .news__card__content:hover .news__card__img span{
         @apply w-full h-full top-0 left-0 transition-all duration-500;
@@ -471,7 +471,7 @@
         @apply text-dark font-bold text-[1.5rem] lg:text-[1.7rem];
     }
     .testimonials__card__actions{
-        @apply h-[5rem] relative mt-[1rem];
+        @apply h-[3rem] relative mt-[1rem];
     }
     .testimonials__card__actions span{
         @apply inline-block z-20 bg-primary w-[2rem] h-[2rem] mx-auto rounded-full relative transition-all duration-500;
@@ -513,7 +513,7 @@
         @apply absolute -bottom-[20rem] left-0 w-full lg:-bottom-[18rem];
     }
     .testimonials__newsletter{
-        @apply bg-primary px-[1rem] py-[2rem] lg:py-[3rem] lg:rounded-xl rounded-md lg:p-[2.5rem] mx-auto lg:w-[80rem]  lg:flex lg:items-center lg:justify-between; 
+        @apply bg-primary w-[25rem] px-[1rem] py-[2rem] lg:py-[3rem] lg:rounded-xl rounded-md lg:p-[2.5rem] mx-auto lg:w-[80rem]  lg:flex lg:items-center lg:justify-between; 
     }
     .testimonials__newsletter__text h4{
         @apply text-white font-bold text-[1.5rem] lg:text-[3rem]; 
@@ -605,6 +605,9 @@
 .banner .tns-controls button{
     @apply bg-primary text-white px-3 py-2 rounded-full;
 }
+.banner .tns-controls button:focus{
+    @apply bg-dark;
+}
 .assets .tns-outer{
     @apply lg:mx-[10rem] relative;
 }
@@ -620,15 +623,24 @@
 .assets .tns-controls button{
     @apply bg-primary text-white px-3 py-2 rounded-full;
 }
+.assets .tns-controls button:focus{
+    @apply bg-dark;
+}
 .instructors .tns-controls{
     @apply lg:flex items-center gap-2 absolute w-fit right-0 top-5 px-[2rem];
 }
 .instructors .tns-controls button{
     @apply bg-primary text-white px-3 py-2 rounded-full;
 }
+.instructors .tns-controls button:focus{
+    @apply bg-dark;
+}
 .testimonial .tns-controls{
     @apply lg:flex items-center gap-4;
 }
 .testimonial .tns-controls button{
     @apply bg-primary text-white px-3 py-2 rounded-full;
+}
+.testimonial .tns-controls button:focus{
+    @apply bg-dark;
 }
